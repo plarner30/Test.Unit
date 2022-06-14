@@ -1,0 +1,49 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "esnext",
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "target": "es5",
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "allowJs": true,
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./test/**/*.ts",
+    "./types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "aurelia_project",
+    // Exclude the following to prevent the TypeScript compiler complaining about overwriting them.
+    // Alternatively, turn off the allowJs setting above.
+    "jest.config.js",
+    "package-scripts.js",
+    "./test/e2e/setup/**/*.js",
+    "./test/karma-bundle.js",
+    "./test/karma.conf.js",
+    "./test/protractor.conf.js",
+    "webpack.config.js",
+    "webpack.netcore.config.js",
+    "./wwwroot/dist/**/*.js"
+  ],
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

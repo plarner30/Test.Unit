@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+    <title><%- htmlWebpackPlugin.options.metadata.title %></title>
+
+    <%= htmlWebpackPlugin.options.metadata.partials.meta %>
+    <%= htmlWebpackPlugin.options.metadata.partials.icons %>  
+
+    <!-- imported CSS are concatenated and added automatically -->
+  </head>
+  <body>
+
+    <%= htmlWebpackPlugin.options.metadata.partials.app %>
+    <%= htmlWebpackPlugin.options.metadata.partials.cookiesBanner %>
+
+  </body>
+</html>

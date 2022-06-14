@@ -1,0 +1,52 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "project": "Test.Unit/tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "rules": {
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "no-prototype-builtins": 0,
+    "no-console": 0,
+    "getter-return": 0,
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-types": "off"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+
+      // As mentioned in the comments, you should extend TypeScript plugins here,
+      // instead of extending them outside the `overrides`.
+      // If you don't want to extend any rules, you don't need an `extends` attribute.
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      ],
+
+      "parserOptions": {
+        "project": ["./tsconfig.json"], // Specify it only for TypeScript files
+      },
+    },
+  ],
+}

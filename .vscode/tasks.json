@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "version",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "--version"
+            ]
+        },
+        {
+            "label": "build",
+            "dependsOn": "version",
+            "type": "npm",
+            "script": "start",
+            "problemMatcher": "$tsc",
+            "options": {
+                "cwd": "${workspaceFolder}/Test.Unit/"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build-dotnet",
+            "dependsOn": "version",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Test.Unit/Test.Unit.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Test.Unit/Test.Unit.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/Test.Unit/Test.Unit.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        }
+    ]
+}
